@@ -6,8 +6,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashSet;
-import java.util.Set;
 
 public class ApplicationInterceptor implements HandlerInterceptor {
 
@@ -24,7 +22,7 @@ public class ApplicationInterceptor implements HandlerInterceptor {
             }
         }
         if (httpServletRequest.getRequestURI().equals("/welcome")){
-            Boolean isUserLogined = ControllerUtils.isUserCodingMafia(httpServletRequest);
+            Boolean isUserLogined = ControllerUtils.isUserNormal(httpServletRequest);
             if(isUserLogined !=null && isUserLogined){
                 return true;
             }
@@ -34,7 +32,7 @@ public class ApplicationInterceptor implements HandlerInterceptor {
             }
         }
         if (httpServletRequest.getRequestURI().startsWith("/user")){
-            Boolean isUserLogined = ControllerUtils.isUserCodingMafia(httpServletRequest);
+            Boolean isUserLogined = ControllerUtils.isUserNormal(httpServletRequest);
             if(isUserLogined !=null && isUserLogined){
                 return true;
             }

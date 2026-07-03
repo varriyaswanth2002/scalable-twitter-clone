@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import tech.twitter.database.GenericDB;
@@ -46,6 +47,15 @@ public class MainController extends BaseController {
             message="User Created!";
         }
         return new SignupResponse(message,user_created);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/welcome")
+    public String welcomePage(ModelMap modelMap, HttpServletResponse response, HttpServletRequest request, Model model) {
+        Member member = ControllerUtils.getCurrentMember(request);
+        modelMap.addAttribute("NAME", member.name);
+        modelMap.addAttribute("PUKU_Member", member);
+        return "welcome";
+
     }
 
 

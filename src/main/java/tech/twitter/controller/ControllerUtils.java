@@ -59,7 +59,7 @@ public class ControllerUtils {
         return null;
     }
 
-    public static Boolean isUserCodingMafia(HttpServletRequest httpServletRequest) {
+    public static Boolean isUserNormal(HttpServletRequest httpServletRequest) {
         Boolean temp = (Boolean) httpServletRequest.getSession().getAttribute("CM");
 
         if (temp != null && temp) return true;

@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
-
+//this catches the exception happens in any get request controller
 public class BaseController {
     @ExceptionHandler
-    public
-    @ResponseBody
-    String defaultErrorHandler(HttpServletRequest req, ModelMap modelMap, Exception e) throws Exception {
+
+    //@ResponseBody used only when message needs to print
+    public String defaultErrorHandler(HttpServletRequest req,  Exception e) throws Exception {
         //System.out.println(e.getMessage());
         //modelMap.addAttribute("MESSAGE","something went wrong");
         return "alien";

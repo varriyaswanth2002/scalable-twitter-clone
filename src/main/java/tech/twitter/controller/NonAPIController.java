@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -28,6 +30,12 @@ public class NonAPIController extends BaseController {
     public
     String alien(ModelMap model) {
         return "alien";
+    }
+    @RequestMapping(method = RequestMethod.GET, value = "/bug")
+    @ResponseBody
+    public String getQuiz(ModelMap modelMap, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        int i=10/0;
+        return "We have no exceptions";
     }
     @RequestMapping(method = RequestMethod.GET, value = "/uitest")
     public

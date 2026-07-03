@@ -10,28 +10,23 @@
 <body>
   <div class="signup-container">
     <form class="signup-form">
-      <h2>Create Your Account</h2>
+      <h2>Login to Your Account</h2>
       <p> Welcome to the Twitter </p>
-
-      <input id="signup-name" type="text" name="name" placeholder="Full Name"><br>
 
       <input id="signup-email" type="email" name="email" placeholder="Email"><br>
 
       <input id="signup-password" type="password" name="name" placeholder="Password"><br>
       <p style="color:red;display:none" id="signup-error"></p>
-      <button type="button" id="btn-signup">Sign Up</button>
+      <button type="button" id="btn-signup">LOGIN</button>
     </form>
   </div>
 
   <script>
     function validateSignupForm(){
-       var name=$("#signup-name").val();
        var email=$("#signup-email").val();
        var password=$("#signup-password").val();
        var error="";
-       if(!name){
-         error+=" Name is empty. ";
-       }
+
        if(!email)
        {
         error+=" Email is empty. ";
@@ -42,7 +37,7 @@
        if(password.length<=3){
          error+="Password length must be greater than 3 characters";
        }
-       $("#signup-error").html(error);
+       $("#signup-error").html(error);//adding the error to the id which is just above the submit button in the html code
        if(error.length>0){
           return false;
        }
@@ -53,17 +48,24 @@
       var isFormValid=validateSignupForm();
       if(isFormValid){
          $("#signup-error").hide();
-         var name=$("#signup-name").val();
+
          var email=$("#signup-email").val();
          var password=$("#signup-password").val();
-         var user={"name":name, "email":email, "password":password}
+         var user={"email":email, "password":password}
          $.ajax({
            type: "POST",
-           url: "/signup",
+           url: "/login/welcome",
            data: JSON.stringify(user),
            success: function(response){
              if(!!response){
-               alert(response.message);
+               if(response.isLoggedIn === true){
+                 location.href = "/welcome";
+               }
+               else{
+                 $("#signup-password").val("");//re-setting the email to be blank if wrong combination
+                 $("#signup-error").html(response.message);
+                 $("#signup-error").show();
+               }
              }
            },
            contentType:"application/json"
