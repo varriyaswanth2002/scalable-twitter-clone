@@ -28,4 +28,4 @@ A high-performance micro-blogging architecture built on Spring MVC and PostgreSQ
 * `/user/followed` - Displays the relationship network of tracked accounts.
 
 ## Project Verification Technical Report
-The complete technical architecture report, folder mappings, database schema scripts, and compilation execution timelines are available in the repository documentation file: [TwitterClone.docx](./TwitterClone.docx)
+The complete technical architecture report, folder mappings, database schema scripts, and compilation execution timelines are available in the repository documentation file: [TwitterClone.pdf](./TwitterClone.pdf)
