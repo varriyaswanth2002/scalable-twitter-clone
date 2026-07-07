@@ -37,11 +37,11 @@ public class NonAPIController extends BaseController {
         int i=10/0;
         return "We have no exceptions";
     }
-    @RequestMapping(method = RequestMethod.GET, value = "/uitest")
-    public
-    String uiTest(ModelMap model) {
+    @RequestMapping(method = RequestMethod.GET,value = "/uitest")
+    public String uiTest(ModelMap modelMap){
         return "uitest";
     }
+
 
 }
 

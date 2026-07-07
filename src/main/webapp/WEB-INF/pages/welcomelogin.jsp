@@ -59,7 +59,7 @@
            success: function(response){
              if(!!response){
                if(response.isLoggedIn === true){
-                 location.href = "/welcome";
+                 location.href = "/user/welcome";
                }
                else{
                  $("#signup-password").val("");//re-setting the email to be blank if wrong combination

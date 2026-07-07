@@ -63,6 +63,9 @@
            data: JSON.stringify(user),
            success: function(response){
              if(!!response){
+               $("#signup-name").val("");
+               $("#signup-email").val("");
+               $("#signup-password").val("");
                alert(response.message);
              }
            },

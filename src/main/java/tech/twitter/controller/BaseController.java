@@ -12,6 +12,7 @@ public class BaseController {
     @ExceptionHandler
 
     //@ResponseBody used only when message needs to print
+    //this is if exceptions happen inside any controller method
     public String defaultErrorHandler(HttpServletRequest req,  Exception e) throws Exception {
         //System.out.println(e.getMessage());
         //modelMap.addAttribute("MESSAGE","something went wrong");

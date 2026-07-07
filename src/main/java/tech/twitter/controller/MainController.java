@@ -49,14 +49,7 @@ public class MainController extends BaseController {
         return new SignupResponse(message,user_created);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/welcome")
-    public String welcomePage(ModelMap modelMap, HttpServletResponse response, HttpServletRequest request, Model model) {
-        Member member = ControllerUtils.getCurrentMember(request);
-        modelMap.addAttribute("NAME", member.name);
-        modelMap.addAttribute("PUKU_Member", member);
-        return "welcome";
 
-    }
 
 
 
