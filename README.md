@@ -60,7 +60,7 @@ Deployment: Jetty Plugin
 
 ## Project Verification Technical Report
 
-The repository contains **TwitterClone.pdf**, which includes:
+The repository contains **[TwitterClone.pdf](./TwitterClone.pdf)**, which includes:
 
 - Complete System Architecture
 - Database Schema
