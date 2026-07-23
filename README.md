@@ -1,31 +1,70 @@
 # Scalable Spring MVC Twitter Clone
 
-A high-performance micro-blogging architecture built on Spring MVC and PostgreSQL, featuring secure session tracking, type-safe jOOQ database queries, and a self-joining social graph follower network.
+A full-stack Twitter-like web application built using Java Spring MVC and PostgreSQL, featuring secure user authentication, session management, tweet publishing, follow/unfollow functionality, personalized recommendations, and profile image uploads.
+
+## Technologies
+
+Backend: Java, Spring MVC
+
+Frontend: JSP, HTML, CSS, JavaScript, jQuery, AJAX, Bootstrap
+
+Database: PostgreSQL using jOOQ
+
+Build Tool: Maven
+
+Deployment: Jetty Plugin
 
 ## System Core Features
 
-* **Asynchronous User Signup**: Processes background registration requests with active data-tier constraints using jQuery AJAX.
-* **Cookie-Based Session Tracking**: Securely manages user states across sessions via custom interceptor filters and secure cookie token wrappers ("t").
-* **Chronological Tweet Persistence**: Stores and aggregates multi-user status timelines using structured relational foreign keys.
-* **Self-Joining Social Graph**: Implements a dedicated relationship bridging layout to process real-time follow and unfollow network states.
-* **Multipart Image Upload Processing**: Configured to stream and update custom user profile media elements across dashboard feeds.
+Asynchronous User Signup: Processes background registration requests using jQuery AJAX.
+
+Cookie-Based Session Tracking: Securely manages authenticated user sessions using cookies and interceptor-based validation.
+
+Tweet Persistence: Stores and retrieves user tweets using PostgreSQL relational tables.
+
+Follow/Unfollow Network: Implements a self-referencing follower relationship model for managing social connections.
+
+Personalized Home Feed: Displays tweets from followed users after successful authentication.
+
+User Recommendation System: Suggests users to follow based on the existing social graph.
+
+Multipart Profile Image Upload: Supports uploading and displaying user-specific profile pictures.
+
+Custom Error Handling: Redirects invalid application routes to a dedicated alien.jsp error page.
 
 ## Technical Architecture Stack
 
-* **Backend Framework**: Java Spring MVC (Context & View Mappings)
-* **Database Query Engine**: jOOQ (Type-Safe Compile-Time SQL Generation)
-* **Database Server**: PostgreSQL Engine / pgAdmin 4
-* **Build System**: Maven Lifecycle Management
-* **Web Container Deployment**: Jetty Plugin Environment
-* **Frontend UI Layout**: JavaServer Pages (JSP), Native JavaScript, CSS3
+Backend Framework: Java Spring MVC
+
+Database Query Engine: jOOQ
+
+Database Server: PostgreSQL
+
+Frontend: JSP, HTML, CSS, JavaScript, jQuery, Bootstrap
+
+Build Tool: Maven
+
+Deployment: Jetty Plugin
 
 ## Core Application Modules
 
-* `/signup` - Handles user registration forms and entry boundaries.
-* `/login/welcome` - Secure entry checkpoint validating profile credentials.
-* `/user/welcome` - Assembles and displays the active home timeline feed.
-* `/user/recommendations` - Computes and renders custom profile connection lists.
-* `/user/followed` - Displays the relationship network of tracked accounts.
+/ signup - User Registration
+
+/ login - User Authentication
+
+/ user/welcome - Personalized Home Timeline
+
+/ user/recommendations - User Recommendation Page
+
+/ user/followed - Following-by-Me Page
 
 ## Project Verification Technical Report
-The complete technical architecture report, folder mappings, database schema scripts, and compilation execution timelines are available in the repository documentation file: [TwitterClone.pdf](./TwitterClone.pdf)
+
+The repository contains **TwitterClone.pdf**, which includes:
+
+- Complete System Architecture
+- Database Schema
+- Folder Structure
+- User Interface Screenshots
+- Project Workflow
+- Implementation Details
